@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-6 shine_me"  *ngFor="let item of collection | paginate: { itemsPerPage: 3, currentPage: p }" >
+      <img [src]="item.img" class="img-responsive"/>
+      <h3>{{item.name}}</h3>
+      <h5>{{item.age}}</h5>
+      <i class="shine_effect"></i>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-8 medium-offset-2 columns">
+      <h2 class="subheader"></h2>
+      <pagination-controls (pageChange)="p = $event" #api></pagination-controls>
+    </div>
+  </div>
+
+</div>
